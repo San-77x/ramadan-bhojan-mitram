@@ -1,61 +1,74 @@
 
 import { Link } from "react-router-dom";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-ramadan-green/95 text-white py-12 islamic-pattern relative">
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-bold mb-4 text-ramadan-gold">റമദാൻ ഭോജൻ മിത്രം</h3>
+            <h3 className="text-xl font-bold mb-4 text-ramadan-gold">{t("footer.title")}</h3>
             <p className="text-white/80 mb-4">
               റമദാൻ മാസത്തിൽ കേരളത്തിലെ മസ്ജിദുകളിൽ നിന്നും ലഭ്യമാകുന്ന ഭക്ഷണത്തെ കുറിച്ചുള്ള വിവരങ്ങൾ പങ്കുവെക്കാൻ സഹായിക്കുന്ന വെബ്സൈറ്റ്.
             </p>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-ramadan-gold">പ്രധാന ലിങ്കുകൾ</h3>
+            <h3 className="text-xl font-bold mb-4 text-ramadan-gold">{t("footer.title")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
-                  ഹോം
+                  {t("nav.home")}
                 </Link>
               </li>
               <li>
                 <Link to="/mosques" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
-                  മസ്ജിദുകൾ
+                  {t("nav.mosques")}
                 </Link>
               </li>
               <li>
                 <Link to="/add-mosque" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
-                  പുതിയ മസ്ജിദ് ചേർക്കുക
+                  {t("nav.addMosque")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/gallery" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
+                  {t("nav.gallery")}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
-                  ഞങ്ങളെ ബന്ധപ്പെടുക
+                  {t("footer.contact")}
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-ramadan-gold">പതിവ് ചോദ്യങ്ങൾ</h3>
+            <h3 className="text-xl font-bold mb-4 text-ramadan-gold">{t("footer.faq")}</h3>
             <ul className="space-y-2">
               <li>
-                <button className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
-                  എങ്ങനെ ഒരു മസ്ജിദ് ചേർക്കാം?
-                </button>
+                <Link to="/about" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
+                  {t("footer.about")}
+                </Link>
               </li>
               <li>
-                <button className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
-                  എങ്ങനെ ഒരു വിവരം സ്ഥിരീകരിക്കാം?
-                </button>
+                <Link to="/faq" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
+                  {t("footer.faq")}
+                </Link>
               </li>
               <li>
-                <button className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
-                  സൈറ്റിന്റെ ഉദ്ദേശ്യം എന്താണ്?
-                </button>
+                <Link to="/terms" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
+                  {t("footer.terms")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/privacy" className="text-white/80 hover:text-ramadan-gold transition-colors duration-200">
+                  {t("footer.privacy")}
+                </Link>
               </li>
             </ul>
           </div>
@@ -63,7 +76,7 @@ const Footer = () => {
         
         <div className="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/60 text-sm">
-            &copy; {new Date().getFullYear()} റമദാൻ ഭോജൻ മിത്രം. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.
+            &copy; {new Date().getFullYear()} {t("footer.title")}. {t("footer.rights")}.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-white/60 hover:text-ramadan-gold transition-colors duration-200">
