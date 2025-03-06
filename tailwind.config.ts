@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // Custom colors for our theme
+        ramadan: {
+          green: {
+            light: '#388E61',
+            DEFAULT: '#0A5F38',
+            dark: '#064025'
+          },
+          gold: {
+            light: '#E8CB6C',
+            DEFAULT: '#D4AF37',
+            dark: '#A88A2A'
+          },
+          cream: '#FFFAEB',
+        }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +99,47 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-10px)'
+          }
+        },
+        'glow': {
+          '0%, 100%': {
+            opacity: '1'
+          },
+          '50%': {
+            opacity: '0.7'
+          }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 0.5s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 3s ease-in-out infinite'
+			},
+      backgroundImage: {
+        'crescent-pattern': "url('/src/assets/crescent-pattern.svg')",
+      },
+      fontFamily: {
+        'malayalam': ['Manjari', 'sans-serif'],
+      }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
